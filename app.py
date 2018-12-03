@@ -9,7 +9,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
-
+import flask
 
 app = dash.Dash(__name__)
 server = app.server
@@ -168,4 +168,10 @@ def update_graph(country_name, yaxis_column_name):
 
 if __name__ == '__main__':
     app.run_server()
+
+
+# In[2]:
+
+
+get_ipython().run_line_magic('tb', '')
 
