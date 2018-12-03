@@ -23,7 +23,6 @@ df=df.rename(index=str, columns={"TIME": "Year", "GEO": "Country",'UNIT':'Unit',
 
 df['Indicator'] = df['Indicator Name'] + ' (' + df['Unit'] + ')'
 
-app = dash.Dash()
 available_indicators = df['Indicator'].unique()
 available_countries = df['Country'].unique()
 
@@ -168,10 +167,4 @@ def update_graph(country_name, yaxis_column_name):
 
 if __name__ == '__main__':
     app.run_server()
-
-
-# In[2]:
-
-
-get_ipython().run_line_magic('tb', '')
 
