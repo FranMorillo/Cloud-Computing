@@ -167,5 +167,5 @@ def update_graph(country_name, yaxis_column_name):
     }
 
 if __name__ == '__main__':
-    app.server.run(debug = True, threaded = True)
+    app.run_server()
 
