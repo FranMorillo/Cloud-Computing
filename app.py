@@ -10,7 +10,7 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
 
-#app = dash.Dash()
+
 app = dash.Dash(__name__)
 server = app.server
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
@@ -167,5 +167,5 @@ def update_graph(country_name, yaxis_column_name):
     }
 
 if __name__ == '__main__':
-    app.run_server()
+    app.server.run(debug = True, threaded = True)
 
