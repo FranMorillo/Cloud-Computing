@@ -4,6 +4,12 @@
 # In[1]:
 
 
+
+# coding: utf-8
+
+# In[1]:
+
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -28,37 +34,42 @@ available_countries = df['Country'].unique()
 
 app.layout = html.Div([
     html.Div([
+        html.H1(
+            children = 'Task 1',
+            style = {'font-family': 'Arial, Helvetica, sans-serif', 'text-align': 'center'}
+        ),
         html.Div([
-            dcc.Dropdown(
-                id = 'xaxis-column1',
-                options = [{'label': i, 'value': i} for i in available_indicators],
-                value = available_indicators[0],
-            ),
-            dcc.RadioItems(
-                id = 'xaxis-type1',
-                options = [{'label': i, 'value': i} for i in ['Linear', 'Log']],
-                value = 'Linear',
-                labelStyle = {'display': 'inline-block'},
-                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
-            )
-        ],
-        style = {'width': '48%', 'display': 'inline-block'}),
+            html.Div([
+                dcc.Dropdown(
+                    id = 'xaxis-column1',
+                    options = [{'label': i, 'value': i} for i in available_indicators],
+                    value = available_indicators[0],
+                ),
+                dcc.RadioItems(
+                    id = 'xaxis-type1',
+                    options = [{'label': i, 'value': i} for i in ['Linear', 'Log']],
+                    value = 'Linear',
+                    labelStyle = {'display': 'inline-block'},
+                    style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+                )
+            ],
+            style = {'width': '48%', 'display': 'inline-block'}),
 
-        html.Div([
-            dcc.Dropdown(
-                id = 'yaxis-column1',
-                options = [{'label': i, 'value': i} for i in available_indicators],
-                value = available_indicators[1],
-            ),
-            dcc.RadioItems(
-                id = 'yaxis-type1',
-                options = [{'label': i, 'value': i} for i in ['Linear', 'Log']],
-                value = 'Linear',
-                labelStyle = {'display': 'inline-block'},
-                style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
-            )
-        ], style = {'width': '48%', 'float': 'right', 'display': 'inline-block'})
-    ]),
+            html.Div([
+                dcc.Dropdown(
+                    id = 'yaxis-column1',
+                    options = [{'label': i, 'value': i} for i in available_indicators],
+                    value = available_indicators[1],
+                ),
+                dcc.RadioItems(
+                    id = 'yaxis-type1',
+                    options = [{'label': i, 'value': i} for i in ['Linear', 'Log']],
+                    value = 'Linear',
+                    labelStyle = {'display': 'inline-block'},
+                    style = {'font-size': '10px', 'font-family': 'Arial, Helvetica, sans-serif'}
+                )
+            ], style = {'width': '48%', 'float': 'right', 'display': 'inline-block'})
+        ]),
 
     dcc.Graph(id = 'indicator-graphic1'),
     html.Div([
